@@ -14,5 +14,10 @@ namespace DispositivosMoviles
         {
             InitializeComponent();
         }
+
+        private async void btnRegistro_Clicked(object sender,EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
+        }
     }
 }

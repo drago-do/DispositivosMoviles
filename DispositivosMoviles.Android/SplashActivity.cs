@@ -20,6 +20,7 @@ namespace DispositivosMoviles.Droid
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            StartActivity(new Intent(Application.Context, typeof (MainActivity)));
         }
     }
 }
