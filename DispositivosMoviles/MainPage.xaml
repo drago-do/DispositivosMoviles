@@ -4,21 +4,47 @@
              x:Class="DispositivosMoviles.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <StackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="1" Margin="0,150,0,20">
+            <Frame CornerRadius="100" 
+           Padding="0"
+           IsClippedToBounds="True">
+                <Image Source="@drawable/icon" HeightRequest="150" WidthRequest="150" Aspect="AspectFit" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="2" Margin="0,0,0,20">
+            <Label Text="Bienvenidos a" FontSize="Title" HorizontalTextAlignment="Center"/>
+            <Label Text="mi aplicacion android" FontSize="Title"/>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="3" Margin="0,200,0,20">
+            <Frame Padding="0,4,0,4" HasShadow="False">
+                <Button x:Name="btnRegistro" Text="Registrate" HeightRequest="50" WidthRequest="280"
+                        TextColor="#000" BackgroundColor="#fff" Clicked="btnRegistro_Clicked"/>
+            </Frame>
+            <Frame Padding="0,4,0,4" HasShadow="False">
+                <Button x:Name="btnCuenta" Text="Ya tienes cuenta?" HeightRequest="50" WidthRequest="280"
+                        TextColor="#000" BackgroundColor="#fff" Clicked="btnInicioSesion_Clicked"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="Center" Grid.Column="0" Grid.Row="4" Margin="0,0,0,20">
+            <Label Text="@ Aplicacion de drago Todos los derechos reservados" HorizontalOptions="Center" TextColor="#000"></Label>
+        </StackLayout>
+
     </StackLayout>
 
 </ContentPage>

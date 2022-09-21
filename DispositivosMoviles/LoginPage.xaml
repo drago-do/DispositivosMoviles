@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DispositivosMoviles.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="22">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                
+                </Grid.ColumnDefinitions>
+
+
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="1">
+                    <Label Text="Bienvenido de nuevo" FontSize="Title" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="2">
+                    <Label Text="Inicia sesion para continuar" FontSize="Subtitle" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="3">
+                    <Label Text="Correo electronico" FontSize="Caption" FontAttributes="Bold"/>
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Ingresa tu correo electronico" Keyboard="Email" MaxLength="20"/>
+                    </Frame>
+                    <Label Text="Contraseña" FontSize="Caption" FontAttributes="Bold"/>
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Contraseña" Keyboard="Text" MaxLength="20" IsPassword="True"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="4" Orientation="Horizontal" HeightRequest="60">
+                    <Frame HasShadow="False" Padding="5,0,5,0">
+                        <Button x:Name="btnNuevaCuenta" Text="Nueva cuenta"
+                                BackgroundColor="#3399FF" TextColor="#fff" CornerRadius="10" WidthRequest="160"
+                                Clicked="btnRegistro_Clicked"/>
+                    </Frame>
+                    <Frame HasShadow="False"  Padding="5,0,5,0">
+                        <Button x:Name="btnOlvidoPass" Text="Olvido la contraseña" 
+                                BackgroundColor="#2F5400" TextColor="#fff" CornerRadius="10" WidthRequest="160"
+                                Clicked="btnOlvido_Clicked"/>
+                    </Frame>
+                    
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="5" Orientation="Vertical">
+                    <Frame HasShadow="False" HeightRequest="45" Padding="5,50,5,0">
+                        <Button x:Name="btnAceptar" Text="Aceptar" FontAttributes="Bold"
+                                BackgroundColor="#2F5496" TextColor="#fff" CornerRadius="30" WidthRequest="350"/>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
