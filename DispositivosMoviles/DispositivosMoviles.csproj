@@ -16,12 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Update="ForgotPasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+=======
+>>>>>>> 1a37c9176e166acc8224ec8b26c4213cc98853eb
     <EmbeddedResource Update="RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
