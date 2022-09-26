@@ -37,11 +37,7 @@
             </Frame>
             <Frame Padding="0,4,0,4" HasShadow="False">
                 <Button x:Name="btnCuenta" Text="Ya tienes cuenta?" HeightRequest="50" WidthRequest="280"
-<<<<<<< HEAD
                         TextColor="#000" BackgroundColor="#fff" Clicked="btnInicioSesion_Clicked"/>
-=======
-                        TextColor="#000" BackgroundColor="#fff"/>
->>>>>>> 1a37c9176e166acc8224ec8b26c4213cc98853eb
             </Frame>
         </StackLayout>
 

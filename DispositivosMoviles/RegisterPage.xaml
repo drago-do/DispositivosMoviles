@@ -4,7 +4,7 @@
              x:Class="DispositivosMoviles.RegisterPage">
     <ContentPage.Content>
         <StackLayout>
-<<<<<<< HEAD
+
             <Grid RowSpacing="22">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -82,11 +82,11 @@
                 </StackLayout>
 
             </Grid>
-=======
+
             <Label Text="Bienvenidos a la pagina de registro de drago!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"  FontSize="Title"/>
->>>>>>> 1a37c9176e166acc8224ec8b26c4213cc98853eb
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
