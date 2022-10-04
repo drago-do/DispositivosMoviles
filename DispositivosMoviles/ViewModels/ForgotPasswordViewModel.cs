@@ -59,9 +59,31 @@ namespace DispositivosMoviles.ViewModels
         #endregion
 
         #region Methods
-        private void EnviarCorreo()
+        private async void EnviarCorreo()
         {
-            //throw new NotImplementedException();
+            //var e = App.Database.GetUserPassword(email).Result();
+
+            //string passwordDelUsuario = e.Password;
+            string passwordDelUsuario = "Contraseña";
+            try
+            {
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress("18030536@itesa.edu.mx", "Sistema de Base de Datos");
+                message.To.Add(email);
+                message.To.Add("18030536@itesa.edu.mx");
+                message.Subject = "Aplicacion de Drago";
+                message.Body = "Prueba 1: " + email + " contraseña: " + passwordDelUsuario;
+                client.EnableSsl = true;
+                client.Credentials = new System.Net.NetworkCredential("18030536@itesa.edu.mx", "18030536SDDR");
+                client.Send(message);
+                await Application.Current.MainPage.DisplayAlert("Asistente de Email", "Se a enviado el password de el cliente","Aceptar");
+                await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+            }
+            catch
+            {
+                return;
+            }
         }
         #endregion
 
