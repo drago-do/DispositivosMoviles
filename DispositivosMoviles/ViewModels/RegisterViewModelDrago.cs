@@ -77,7 +77,7 @@ namespace DispositivosMoviles.ViewModels
         public string ApMaternoTxt
         {
             get { return this.apmaterno; }
-            set { SetValue(ref this.appaterno, value); }
+            set { SetValue(ref this.apmaterno, value); }
         }
 
         public string EdadTxt
@@ -132,29 +132,51 @@ namespace DispositivosMoviles.ViewModels
             }
             if (string.IsNullOrEmpty(this.ApPaternoTxt))
             {
-                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el apellido de tu jefe chavo", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el Apellido de tu jefe chavo", "Aceptar");
                 return;
             }
             if (string.IsNullOrEmpty(this.ApMaternoTxt))
             {
-                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el nombre de tu jefita chavo", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el Apellido de tu jefita chavo", "Aceptar");
                 return;
             }
 
             if (string.IsNullOrEmpty(this.EdadTxt))
             {
-                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el nombre chavo", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el edad chavo", "Aceptar");
                 return;
             }
             if (string.IsNullOrEmpty(this.PaisPicker))
             {
-                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el nombre chavo", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error en la matrix", "Te falta el Pais chavo", "Aceptar");
                 return;
             }
             this.IsEnabled = true;
             this.IsRuning = true;
             this.IsVisible = true;
 
+            await Task.Delay(1000);
+
+            var user = new UserDrago
+            {
+                Usuario = UsuarioTxt.ToLower(),
+                Password = PasswordTxt.ToLower(),
+                Email = EmailTxt.ToLower(),
+                ApPaterno = ApPaternoTxt.ToLower(),
+                ApMaterno = ApMaternoTxt.ToLower(),
+                Edad = EdadTxt.ToLower(),
+                Pais = PaisPicker.ToLower(),
+                Fecha_De_Creacion = DateTime.UtcNow
+            };
+
+            //Se guarda el registro
+            await App.Database.SaveUserAsync(user);
+
+            await Application.Current.MainPage.DisplayAlert("Ya estuvo","Listo, bienvenido "+usuario.ToString()+" a tu app","Yastas");
+            this.IsRuning = false;
+            this.IsVisibleTxt = false;
+            this.IsEnabledTxt = true;
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
         }
 
 

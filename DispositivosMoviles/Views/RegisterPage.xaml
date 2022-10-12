@@ -30,36 +30,42 @@
                 <StackLayout HorizontalOptions="Center" Grid.Row="2">
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
                         <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
-                               Placeholder="Nombre de usuario" Keyboard="Text" MaxLength="20"/>
+                               Placeholder="Nombre de usuario" Keyboard="Text" MaxLength="100"
+                               Text="{Binding UsuarioTxt, Mode=TwoWay}"/>
                     </Frame>
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
                         <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
-                               Placeholder="Contraseña" Keyboard="Text" MaxLength="20" IsPassword="True"/>
+                               Placeholder="Contraseña" Keyboard="Text" MaxLength="20" IsPassword="True"
+                               Text="{Binding PasswordTxt,Mode=TwoWay}"/>
                     </Frame>
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
                         <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
-                               Placeholder="Correo Electronico" Keyboard="Email" MaxLength="20"/>
+                               Placeholder="Correo Electronico" Keyboard="Email" MaxLength="100"
+                               Text="{Binding EmailTxt,Mode=TwoWay}"/>
                     </Frame>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="Center" Grid.Row="3">
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
                         <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
-                               Placeholder="Apellido Paterno" Keyboard="Text" MaxLength="20"/>
+                               Placeholder="Apellido Paterno" Keyboard="Text" MaxLength="100"
+                               Text="{Binding ApPaternoTxt,Mode=TwoWay}"/>
                     </Frame>
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
                         <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
-                               Placeholder="Apellido Materno" Keyboard="Text" MaxLength="20"/>
+                               Placeholder="Apellido Materno" Keyboard="Text" MaxLength="100"
+                               Text="{Binding ApMaternoTxt,Mode=TwoWay}"/>
                     </Frame>
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="Center" Grid.Row="4">
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
                         <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
-                               Placeholder="Edad" Keyboard="Numeric" MaxLength="20"/>
+                               Placeholder="Edad" Keyboard="Numeric" MaxLength="100"
+                               Text="{Binding EdadTxt,Mode=TwoWay}"/>
                     </Frame>
                     <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
-                        <Picker Title="País" WidthRequest="350">
+                        <Picker Title="País" WidthRequest="350" SelectedItem="{Binding PaisPicker}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>México</x:String>
@@ -77,7 +83,8 @@
                     <Frame HasShadow="False" HeightRequest="45" Padding="5,0,5,0">
                         <Button x:Name="btnAceptar" Text="Aceptar" FontAttributes="Bold"
                                 BackgroundColor="#2F5496" TextColor="#fff" CornerRadius="30" WidthRequest="350"
-                                Clicked="btnInicioSesion_Clicked"/>
+                                Command="{Binding RegisterCommand}"
+                                IsEnabled="{Binding isEnabledTxt}"/>
                     </Frame>
                 </StackLayout>
 

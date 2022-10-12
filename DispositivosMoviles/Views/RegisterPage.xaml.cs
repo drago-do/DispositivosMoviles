@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using DispositivosMoviles.ViewModels;
 
 namespace DispositivosMoviles
 {
@@ -15,6 +16,7 @@ namespace DispositivosMoviles
         public RegisterPage()
         {
             InitializeComponent();
+            BindingContext = new RegisterViewModelDrago();
         }
         private async void btnInicioSesion_Clicked(object sender, EventArgs e)
         {
