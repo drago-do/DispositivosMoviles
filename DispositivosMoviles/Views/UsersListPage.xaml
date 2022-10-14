@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DispositivosMoviles.Views.UsersListPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="10">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+
+
+
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" WidthRequest="350">
+                <Frame Padding="0" HasShadow="True" VerticalOptions="Center">
+
+                    <ListView
+                        ItemsSource="{Binding ListViewSource}"
+                        HasUnevenRows="True"
+                        x:Name="ListViewUser"
+                        ItemSelected="ListViewName_ItemSelected"
+                        IsPullToRefreshEnabled="{Binding IsRefreshingTxt}"  
+                        >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="120"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                            <CheckBox Color="Blue"/>
+
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                            <Label Text="{Binding Usuario}" FontSize="12"/>
+                                            <Label Text="{Binding Email}" FontSize="12"/>
+                                            <Label Text="{Binding Password}" FontSize="12"/>
+                                            <Label Text="{Binding Fecha_De_Creacion}" FontSize="12" />
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

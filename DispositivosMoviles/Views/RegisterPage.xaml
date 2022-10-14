@@ -87,6 +87,13 @@
                                 IsEnabled="{Binding isEnabledTxt}"/>
                     </Frame>
                 </StackLayout>
+                <StackLayout HorizontalOptions="Center" Grid.Row="6">
+                    <Frame HasShadow="False" HeightRequest="45" Padding="5,0,5,0">
+                        <Button x:Name="btnAceptar" Text="Verificar usuarios" FontAttributes="Bold"
+                                BackgroundColor="#2F5496" TextColor="#fff" CornerRadius="30" WidthRequest="350"
+                                Clicked="btnUserListPage"/>
+                    </Frame>
+                </StackLayout>
 
             </Grid>
 
