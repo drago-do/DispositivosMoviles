@@ -28,7 +28,7 @@
                         ItemsSource="{Binding ListViewSource}"
                         HasUnevenRows="True"
                         x:Name="ListViewUser"
-                        ItemSelected="ListViewName_ItemSelected"
+                        
                         IsPullToRefreshEnabled="{Binding IsRefreshingTxt}"  
                         >
                         <ListView.ItemTemplate>
@@ -52,6 +52,7 @@
                                             <Label Text="{Binding Email}" FontSize="12"/>
                                             <Label Text="{Binding Password}" FontSize="12"/>
                                             <Label Text="{Binding Fecha_De_Creacion}" FontSize="12" />
+                                            <Label Text="{Binding Id}" FontSize="12" />
                                         </StackLayout>
                                     </Grid>
                                 </ViewCell>
