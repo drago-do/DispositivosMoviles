@@ -34,6 +34,23 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem
+                                            x:Name="BtnDelete"
+                                            Text="Eliminarp"
+                                            IsDestructive="True"
+                                            Clicked="BtnDelete_Clicked"
+                                            CommandParameter= "{Binding .}"
+                                            >
+                                        </MenuItem>
+                                        <MenuItem x:Name="BtnUpdate"
+                                                  Text="Actualizarp"
+                                                  IsDestructive="True"
+                                                  Clicked="BtnUpdate_Clicked"
+                                                  CommandParameter="{Binding .}">
+                                        </MenuItem>
+
+                                    </ViewCell.ContextActions>
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="120"/>

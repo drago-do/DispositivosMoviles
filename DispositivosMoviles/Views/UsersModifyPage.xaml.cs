@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using DispositivosMoviles.ViewModels;
 
 namespace DispositivosMoviles.Views
 {
@@ -15,6 +16,7 @@ namespace DispositivosMoviles.Views
         public UsersModifyPage()
         {
             InitializeComponent();
+            BindingContext = new UserModifyViewModel();
         }
     }
 }

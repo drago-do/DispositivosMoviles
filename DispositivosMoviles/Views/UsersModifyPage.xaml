@@ -4,9 +4,95 @@
              x:Class="DispositivosMoviles.Views.UsersModifyPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+
+            <Grid RowSpacing="22">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="1">
+                    <Label Text="Actualiza tus datos!" FontSize="Title" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="2">
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Nombre de usuario" Keyboard="Text" MaxLength="100"
+                               Text="{Binding UsuarioTxt, Mode=TwoWay}"/>
+                    </Frame>
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Contraseña" Keyboard="Text" MaxLength="20" IsPassword="True"
+                               Text="{Binding PasswordTxt,Mode=TwoWay}"/>
+                    </Frame>
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Correo Electronico" Keyboard="Email" MaxLength="100"
+                               Text="{Binding EmailTxt,Mode=TwoWay}"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="3">
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Apellido Paterno" Keyboard="Text" MaxLength="100"
+                               Text="{Binding ApPaternoTxt,Mode=TwoWay}"/>
+                    </Frame>
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Apellido Materno" Keyboard="Text" MaxLength="100"
+                               Text="{Binding ApMaternoTxt,Mode=TwoWay}"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="4">
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Entry HorizontalOptions="Center" HorizontalTextAlignment="Start" WidthRequest="350" 
+                               Placeholder="Edad" Keyboard="Numeric" MaxLength="100"
+                               Text="{Binding EdadTxt,Mode=TwoWay}"/>
+                    </Frame>
+                    <Frame HasShadow="True" HeightRequest="45" Padding="5,0,5,0">
+                        <Picker Title="País" WidthRequest="350" SelectedItem="{Binding PaisPicker}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>México</x:String>
+                                    <x:String>Japón</x:String>
+                                    <x:String>Estados Unidos</x:String>
+                                    <x:String>Venezuela</x:String>
+                                    <x:String>Argentina</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Grid.Row="5">
+                    <Frame HasShadow="False" HeightRequest="45" Padding="5,0,5,0">
+                        <Button x:Name="btnAceptar" Text="Actualizar" FontAttributes="Bold"
+                                BackgroundColor="#2F5496" TextColor="#fff" CornerRadius="30" WidthRequest="350"
+                                Command="{Binding UpdateCommand}"
+                                IsEnabled="{Binding isEnabledTxt}"/>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+
+            <Label Text="Bienvenidos a la pagina de registro de drago!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"  FontSize="Title"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
